@@ -14,23 +14,20 @@ class Users extends Migration
 				'type'=>'INT',
 				'constraint'=>8,
 				'unsigned'=>true,
-				'autoincreament'=>true,
+				'auto_increment'=>true,
+			],
+			'user-name'=>[
+				'type'=>'VARCHAR',
+				'constraint'=>255,
 			],
 			'user-email'=>[
 				'type'=>'VARCHAR',
 				'constraint'=>255,
+				'unique'=> true,
 			],
 			'user-password'=>[
 				'type'=>'varchar',
 				'constraint'=>255,
-			],
-			'created_at'  => [
-				'type'	      => 'DATETIME',
-				'null'	      => true,
-			],
-			'updated_at' 	=> [
-				'type'	     => 'DATETIME',
-				'null'	     => true,
 			]
 		]);
 		$this->forge->addPrimaryKey('user-id');
