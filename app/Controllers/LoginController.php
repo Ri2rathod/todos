@@ -22,8 +22,8 @@ class LoginController extends BaseController
 	}
 	public function login()
 	{
-		$data=array('user-email'=>$this->request->getVar('email'),'user-password'=>$this->request->getVar('password'));
-		$user=$this->login->where($data);
+		$data=array('user-email'=>$this->request->getVar('email'),'user-password'=> md5($this->request->getVar('password')));
+		$this->login->where($data);
 		$row=$this->login->countAllResults();
 		$session=session();
 		if($row==1)
