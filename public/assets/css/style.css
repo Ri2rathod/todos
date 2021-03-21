@@ -1,0 +1,7 @@
+*{
+    font-family: 'Red Hat Display', sans-serif;
+}
+input[type="checkbox"]
+{
+    -webkit-transform: scale(1.5) !important;
+}
