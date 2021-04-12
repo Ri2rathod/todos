@@ -23,7 +23,11 @@ class Todos extends Migration
 			'todos-status'=>[
 				'type'=>'BIT',
 				'constraint'=>1,
-			],		
+			],
+			'user-email'=>[
+				'type'=>'varchar',
+				'constraint'=>50,
+			],	
 			'created_at'  => [
 			   'type'	      => 'DATETIME',
 			   'null'	      => true,
@@ -34,7 +38,9 @@ class Todos extends Migration
 		   ]
 		]);
 		$this->forge->addkey('todos-id',true);
+		// $forge->addForeignKey('user-id','users','id');
 		$this->forge->createTable('todos');
+		// $this->forge->addColumn();
    
 	}
 

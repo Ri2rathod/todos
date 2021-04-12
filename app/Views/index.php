@@ -18,10 +18,10 @@
         <div class=" text-center mt-4 py-2  m-auto rounded">
             <h1 class="display-5">Todo-list</h1>
         </div>
-
+        <?= session('user') ?>
         <div class="container-fluid bg-light">
             <div class="container ">
-                <form action="" class="d-flex p-1 col-12">
+                <form action="#" class="d-flex p-1 col-12">
                     <input type="text" class="col-9 px-4" name="input_list" id="" placeholder="Add Task"  id="datetimepicker1">
                     <div class="mx-auto  d-flex col-3 justify-content-center">
                             <button class="btn btn-success col-5 mx-2"><i class="far fa-calendar-alt fa-2x"></i></button>
@@ -48,9 +48,12 @@
                 </div>
                 <hr class="w-75 m-auto my-4">
                 <div class="pb-5 ">
+                <?php 
+                    foreach($todos as $row){
+                ?>
                     <div class="d-flex justify-content-between border-bottom border-1  py-2">
                         <input type="checkbox"  class="my-auto mx-5"  name="" id="">
-                        <h3 class="w-50  fs-5">Lorem, ipsum dolor sit</h3>
+                        <h3 class="w-50  fs-5"><?php echo $row['todos-task'] ; ?></h3>
                         <div class=" my-auto d-flex border border-success rounded-3">
                             <i class="fas fa-spinner my-auto p-2"></i>
                             <span class="my-auto px-2">17 Mar 2021</span>
@@ -61,7 +64,9 @@
                             <i class="fas fa-edit my-auto px-2 btn btn-success mx-1"></i>
                         </div>
                     </div>
-                    <div class="d-flex justify-content-between border-bottom border-1  py-2">
+
+                    <?php } ?>
+                    <!-- <div class="d-flex justify-content-between border-bottom border-1  py-2">
                         <input type="checkbox" class="my-auto mx-5"  name="" id="">
                         <h3 class="w-50  fs-5">Lorem, ipsum dolor sit</h3>
                         <div class=" my-auto d-flex border border-success rounded-3">
@@ -86,7 +91,7 @@
                             <i class="fas fa-trash-alt my-auto px-2 btn btn-danger mx-1"></i>
                             <i class="fas fa-edit my-auto px-2 btn btn-success mx-1"></i>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 

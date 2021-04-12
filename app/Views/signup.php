@@ -33,7 +33,7 @@
                 </form>
                 <div class="row">
                     <hr class="mt-4 w-25 mx-auto">
-                    <a href="" class="link text-center text-decoration-none">Already have Account?</a>
+                    <a href="./" class="link text-center text-decoration-none">Already have Account?</a>
                 </div>
             </div>
         </div>

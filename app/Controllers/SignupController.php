@@ -35,7 +35,7 @@ class SignupController extends BaseController
 			{
 				$contactModel->insert($data);
 				
-				$session->setFlashdata('user',$this->request->getVar('username'));
+				$session->setFlashdata('user',$this->request->getVar('useremail'));
 				return view('index');
 			}
 		}

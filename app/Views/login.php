@@ -5,7 +5,7 @@
             <div class="col-4  mx-auto bg-light shadow my-5">
                 <h1 class="mx-auto py-2 text-center display-5">Login</h1>
                 <hr class="w-50 mx-auto">
-                <form class="py-3" method="POST" action="./login">
+                <form class="py-3" method="POST" action="./">
                     <div class="mb-3">
                       <label for="exampleInputEmail1" class="form-label">Email address</label>
                       <input type="email" name="email" placeholder="Enter Your Email" class="form-control <?= session('msg')?>" id="exampleInputEmail1" aria-describedby="emailHelp" >
