@@ -8,19 +8,19 @@ class Users extends Model
 {
 	protected $DBGroup              = 'default';
 	protected $table                = 'users';
-	protected $primaryKey           = 'id';
+	protected $primaryKey           = 'user-id';
 	protected $useAutoIncrement     = true;
 	protected $insertID             = 0;
 	protected $returnType           = 'array';
 	protected $useSoftDelete        = false;
 	protected $protectFields        = true;
-	protected $allowedFields        = ['user-name','user-email','user-password','created_at','updated_at'];
+	protected $allowedFields        = ['user-name','user-email','user-password'];
 
 	// Dates
-	protected $useTimestamps        = false;
+	protected $useTimestamps        = true;
 	protected $dateFormat           = 'datetime';
 	protected $createdField         = 'created_at';
-	protected $updatedField         = 'updated_at';
+	protected $updatedField         = '';
 	protected $deletedField         = 'deleted_at';
 
 	// Validation

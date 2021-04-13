@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\Users;
+use App\Models\Todos;
 use Exception;
 
 class SignupController extends BaseController
@@ -22,7 +23,8 @@ class SignupController extends BaseController
 		$email=array('user-email'=>$this->request->getVar('useremail'));
 
 		
-		try{
+		try
+		{
 			$session=session();
 			$contactModel->where($email);
 			$row=$contactModel->countAllResults();
@@ -34,9 +36,12 @@ class SignupController extends BaseController
 			else
 			{
 				$contactModel->insert($data);
-				
-				$session->setFlashdata('user',$this->request->getVar('username'));
-				return view('index');
+				$session->setFlashdata('user',$this->request->getVar('useremail'));
+				// $todos=new Todos();
+				// $data['todos']= $todos->where('user-email',$this->request->getVar('email'))->findAll();
+			
+				// return view('index',$data);
+				return redirect()->to('/Home');	
 			}
 		}
 		catch(Exception $e)

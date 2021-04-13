@@ -4,6 +4,8 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
+use function PHPSTORM_META\type;
+
 class Users extends Migration
 {
 	public function up()
@@ -28,7 +30,11 @@ class Users extends Migration
 			'user-password'=>[
 				'type'=>'varchar',
 				'constraint'=>255,
-			]
+			],
+			'created_at'=>[
+				'type'=>'timestamp',
+			],
+			
 		]);
 		$this->forge->addPrimaryKey('user-id');
 		$this->forge->createTable('users') ;

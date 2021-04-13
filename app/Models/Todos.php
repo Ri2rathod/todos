@@ -8,19 +8,19 @@ class Todos extends Model
 {
 	protected $DBGroup              = 'default';
 	protected $table                = 'todos';
-	protected $primaryKey           = 'id';
+	protected $primaryKey           = 'todos-id';
 	protected $useAutoIncrement     = true;
 	protected $insertID             = 0;
 	protected $returnType           = 'array';
 	protected $useSoftDelete        = false;
 	protected $protectFields        = true;
-	protected $allowedFields        = [];
+	protected $allowedFields        = ['todos-task','todos-due-date','user-email'];
 
 	// Dates
-	protected $useTimestamps        = false;
+	protected $useTimestamps        = true;
 	protected $dateFormat           = 'datetime';
 	protected $createdField         = 'created_at';
-	protected $updatedField         = 'updated_at';
+	protected $updatedField         = '';
 	protected $deletedField         = 'deleted_at';
 
 	// Validation

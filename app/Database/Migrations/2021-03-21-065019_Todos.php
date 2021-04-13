@@ -4,6 +4,8 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
+use function PHPSTORM_META\type;
+
 class Todos extends Migration
 {
 	public function up()
@@ -22,19 +24,23 @@ class Todos extends Migration
 			],
 			'todos-status'=>[
 				'type'=>'BIT',
-				'constraint'=>1,
-			],		
-			'created_at'  => [
-			   'type'	      => 'DATETIME',
-			   'null'	      => true,
-		   ],
-		   'updated_at' 	=> [
-			   'type'	     => 'DATETIME',
-			   'null'	     => true,
-		   ]
+				'constraint'=>2,
+			],
+			'todos-due-date'=>[
+				'type'=>'date',
+			],
+			'user-email'=>[
+				'type'=>'varchar',
+				'constraint'=>50,
+			],	
+			'created_at'=>[
+				'type'=>'timestamp',
+			],
 		]);
 		$this->forge->addkey('todos-id',true);
+		// $forge->addForeignKey('user-id','users','id');
 		$this->forge->createTable('todos');
+		// $this->forge->addColumn();
    
 	}
 
