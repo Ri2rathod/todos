@@ -14,13 +14,13 @@ class Todos extends Model
 	protected $returnType           = 'array';
 	protected $useSoftDelete        = false;
 	protected $protectFields        = true;
-	protected $allowedFields        = [];
+	protected $allowedFields        = ['todos-task','todos-due-date','user-email'];
 
 	// Dates
-	protected $useTimestamps        = false;
+	protected $useTimestamps        = true;
 	protected $dateFormat           = 'datetime';
 	protected $createdField         = 'created_at';
-	protected $updatedField         = 'updated_at';
+	protected $updatedField         = '';
 	protected $deletedField         = 'deleted_at';
 
 	// Validation

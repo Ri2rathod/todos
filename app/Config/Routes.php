@@ -36,6 +36,8 @@ $routes->get('/', 'LoginController::index');
 $routes->post('/', 'LoginController::login');
 $routes->get('/signup', 'SignupController::index');
 $routes->post('/signup', 'SignupController::signup');
+$routes->post('/add_todo','TodosCrud::index');
+$routes->get('/home','Home::index');
 
 /*
  * --------------------------------------------------------------------

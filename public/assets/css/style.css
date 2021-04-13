@@ -3,5 +3,22 @@
 }
 input[type="checkbox"]
 {
-    -webkit-transform: scale(1.5) !important;
+    -webkit-transform: scale(1.2) ;
 }
+/* nav{
+    border-radius: 50px !important;
+} */
+.hover-tab{
+    opacity: 0.5 !important;
+}
+.hover-tab:hover{
+    opacity: 1 !important;
+    transition: 0.5s;
+}
+.loader{
+    animation: spin 2s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
